@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE xml>
+<Context>
+
+<Resource name="jdbc/connection1" 
+          auth="Container" 
+          type="javax.sql.DataSource"
+          maxActive="50" 
+          maxIdle="30" 
+          maxWait="10000"
+          removeAbandonedTimeout="300"
+          username="sql3254142" 
+          password="mNARJXBzCV" 
+          driverClassName="com.mysql.cj.jdbc.Driver"
+          url="jdbc:mysql://sql3.freemysqlhosting.net:3306/sql3254142"/>
+</Context>

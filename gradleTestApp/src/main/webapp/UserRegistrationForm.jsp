@@ -29,12 +29,13 @@ $(document).ready(function(){
 			userRegistrationForm.submit();
 		}
 		else {
-			var html = $("#errorDiv").html();
-			$("#errorDiv").html("<a href='#' class='close' data-dismiss='alert'>&times;</a>" + html );
 			$("#errorDiv").show();
 		}
 	});
 	
+	$(".errorDiv").click(function() {
+		$(".errorDiv").hide();
+	});
 	function addErrorIfValueIsBlank(elementName, displayName) {	
 		if(!$.trim($("#" + elementName).val())) {
 			hasErrors = true;
@@ -75,10 +76,10 @@ request.setAttribute("errors", errors);
   			</tr>
   		</table>
   		<form name="userRegistrationForm" id="form" method="post" action="app/UserRegistrationController.registerNewUser">
-  		<div class="alert alert-danger error" id="errorDiv">
+  		<div class="errorDiv alert alert-danger error" id="errorDiv">
   		</div>
 		 <c:if test = "${not empty errors}">
-			 <div class="alert alert-danger error" id="errorDiv2">
+			 <div class="errorDiv alert alert-danger error" id="errorDiv2">
 				${errors}
   			</div>
 		 </c:if>

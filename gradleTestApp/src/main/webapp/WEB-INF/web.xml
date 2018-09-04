@@ -16,6 +16,11 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 	
+<login-config>
+ <auth-method>BASIC</auth-method>
+ <realm-name>Test Realm</realm-name>
+</login-config>
+	
 	
 	<resource-ref>
     <description>DB Connection</description>
@@ -33,6 +38,19 @@
          <servlet-name>defaultServlet</servlet-name>
          <url-pattern>/app/*</url-pattern>
     </servlet-mapping>
+    
+ 	<security-role>
+        <role-name>user-reg</role-name>
+    </security-role>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>generic access</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user-reg</role-name>
+        </auth-constraint>
+    </security-constraint>
 </web-app>
 
 

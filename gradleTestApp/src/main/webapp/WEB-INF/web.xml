@@ -18,7 +18,7 @@
 	
 <login-config>
  <auth-method>BASIC</auth-method>
- <realm-name>Test Realm</realm-name>
+ <realm-name>User Registration Test Application</realm-name>
 </login-config>
 	
 	
